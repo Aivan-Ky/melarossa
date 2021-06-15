@@ -3,13 +3,18 @@ public abstract class Car {
     private String carClass;
     private double carWeight;
 
+    private Engine engineName;
+    private Driver driverName;
+
     // "Класс Car содержит .... водитель типа Driver, мотор типа Engine" имелось ввиду отношение наследования???
 
 
-    public Car(String carMaker, String carClass, double carWeight) {
+    public Car(String carMaker, String carClass, double carWeight, Engine engineName, Driver driverName) {
         this.carMaker = carMaker;
         this.carClass = carClass;
         this.carWeight = carWeight;
+        this.engineName = engineName;
+        this.driverName = driverName;
     }
 
     public void start() {
@@ -35,6 +40,5 @@ public abstract class Car {
     public void setCarMaker(String carMaker) { this.carMaker = carMaker; }
     public void setCarClass(String carClass) { this.carClass = carClass; }
     public void setCarWeight(double carWeight) { this.carWeight = carWeight; }
-
 
 }
