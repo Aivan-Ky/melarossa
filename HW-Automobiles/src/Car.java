@@ -34,13 +34,6 @@ public abstract class Car {
     public void turnLeft() {
         System.out.println("Поворот налево");
     }
-    /*
-    public String toString() {
-        String fullData = "марка автомобиля: " + this.carMaker + "\nкласс автомобиля: " + this.carClass +
-                "\nвес: " + this.carWeight; // доделать (абстрактный метод???)?????
-        return fullData;
-    }
-    */
 
     @Override
     public String toString() {

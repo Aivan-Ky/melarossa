@@ -6,13 +6,6 @@ public class Lorry extends Car{
         this.lorryCarryingMass = lorryCarryingMass;
     }
 
-    /*
-    public Lorry(String carMaker, String carClass, double carWeight,
-                 Engine engineName, Driver driverName, int lorryCarryingMass) {
-        super(carMaker, carClass, carWeight, engineName, driverName);
-        this.lorryCarryingMass = lorryCarryingMass;
-    }
-     */
 
     public int getLorryCarryingMass() { return lorryCarryingMass; }
 

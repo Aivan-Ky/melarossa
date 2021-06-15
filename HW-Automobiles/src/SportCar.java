@@ -6,13 +6,6 @@ public class SportCar extends Car {
         this.maxSportCarSpeed = maxSportCarSpeed;
     }
 
-    /*
-    public SportCar(String carMaker, String carClass, double carWeight,
-                    Engine engineName, Driver driverName, double maxSportCarSpeed) {
-        super(carMaker, carClass, carWeight, engineName, driverName);
-        this.maxSportCarSpeed = maxSportCarSpeed;
-    }
-    */
 
     public double getMaxSportCarSpeed() { return maxSportCarSpeed; }
 
