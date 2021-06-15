@@ -3,18 +3,23 @@ public abstract class Car {
     private String carClass;
     private double carWeight;
 
-    private Engine engineName;
-    private Driver driverName;
+    private Engine engine;
+    private Driver driver;
 
-    // "Класс Car содержит .... водитель типа Driver, мотор типа Engine" имелось ввиду отношение наследования???
 
+
+    public Car(String carMaker, String carClass, double carWeight) {
+        this.carMaker = carMaker;
+        this.carClass = carClass;
+        this.carWeight = carWeight;
+    }
 
     public Car(String carMaker, String carClass, double carWeight, Engine engineName, Driver driverName) {
         this.carMaker = carMaker;
         this.carClass = carClass;
         this.carWeight = carWeight;
-        this.engineName = engineName;
-        this.driverName = driverName;
+        this.engine = engineName;
+        this.driver = driverName;
     }
 
     public void start() {
@@ -29,16 +34,35 @@ public abstract class Car {
     public void turnLeft() {
         System.out.println("Поворот налево");
     }
+    /*
     public String toString() {
-        return "выводит полную информацию об автомобиле, ее водителе и моторе"; // доделать (абстрактный метод???)?????
+        String fullData = "марка автомобиля: " + this.carMaker + "\nкласс автомобиля: " + this.carClass +
+                "\nвес: " + this.carWeight; // доделать (абстрактный метод???)?????
+        return fullData;
+    }
+    */
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "carMaker='" + carMaker + '\'' +
+                ", carClass='" + carClass + '\'' +
+                ", carWeight=" + carWeight +
+                ", engine=" + engine +
+                ", driver=" + driver +
+                '}';
     }
 
     public String getCarMaker() { return carMaker; }
     public String getCarClass() { return carClass; }
     public double getCarWeight() { return carWeight; }
+    public Engine getEngine() { return engine; }
+    public Driver getDriver() { return driver; }
 
     public void setCarMaker(String carMaker) { this.carMaker = carMaker; }
     public void setCarClass(String carClass) { this.carClass = carClass; }
     public void setCarWeight(double carWeight) { this.carWeight = carWeight; }
+    public void setEngine(Engine engine) { this.engine = engine; }
+    public void setDriver(Driver driver) { this.driver = driver; }
 
 }

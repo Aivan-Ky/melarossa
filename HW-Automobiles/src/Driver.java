@@ -5,4 +5,11 @@ public class Driver extends Person {
         super(fullName);
         this.drivingExperienceYears = drivingExperienceYears;
     }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "drivingExperienceYears=" + drivingExperienceYears +
+                '}';
+    }
 }

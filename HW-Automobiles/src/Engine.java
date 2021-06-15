@@ -6,4 +6,12 @@ public class Engine {
         this.enginePower = enginePower;
         this.engineCompany = engineCompany;
     }
+
+    @Override
+    public String toString() {
+        return "Engine{" +
+                "enginePower=" + enginePower +
+                ", engineCompany='" + engineCompany + '\'' +
+                '}';
+    }
 }
