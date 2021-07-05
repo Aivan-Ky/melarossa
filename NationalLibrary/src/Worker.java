@@ -9,9 +9,41 @@
 import java.util.HashSet;
 
 public class Worker {
-    private String workerName;
     private HashSet<Skill> skillSet;
     private double salary;
 
+    public Worker(HashSet<Skill> skillSet, double salary) {
+        this.skillSet = skillSet;
+        this.salary = salary;
+    }
 
+    public Worker() {
+    }
+
+    public HashSet<Skill> getSkillSet() {
+        return skillSet;
+    }
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSkillSet(HashSet<Skill> skillSet) {
+        this.skillSet = skillSet;
+    }
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public Worker workerRandomizer(Skill skill) {
+        Worker worker = new Worker();
+        int skillsAmount = 3;
+
+        for (int i = 1; i <= skillsAmount; i++) {
+
+            skillSet.add(Skill.values()[skillsAmount]);
+        }
+
+
+        return worker;
+    }
 }
