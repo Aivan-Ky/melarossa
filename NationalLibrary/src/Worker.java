@@ -16,7 +16,6 @@ public class Worker {
         this.skillSet = skillSet;
         this.salary = salary;
     }
-
     public Worker() {
     }
 
@@ -36,14 +35,25 @@ public class Worker {
 
     public Worker workerRandomizer(Skill skill) {
         Worker worker = new Worker();
-        int skillsAmount = 3;
-
-        for (int i = 1; i <= skillsAmount; i++) {
-
-            skillSet.add(Skill.values()[skillsAmount]);
+        int maxSkillAmount = 3;
+        int minSkillAmount = 1;
+        int randomSkillAmount = minSkillAmount + (int)(Math.random() * (maxSkillAmount - minSkillAmount));
+        for (int i = 1; i <= randomSkillAmount; i++) {
+            int randomSkillOrdinal = (int)(Math.random() * Skill.values().length);
+            worker.skillSet.add(Skill.values()[randomSkillOrdinal]);
         }
-
-
+        int maxSalary = 2000;
+        int minSalary = 700;
+        int randomSalary = minSalary + (int)(Math.random() *(maxSalary - minSalary));
+        worker.salary = randomSalary;
         return worker;
+    }
+
+    @Override
+    public String toString() {
+        return "Worker {" +
+                "skillSet=" + skillSet +
+                ", salary=" + salary +
+                '}';
     }
 }
