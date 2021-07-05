@@ -33,15 +33,17 @@ public class Worker {
         this.salary = salary;
     }
 
-    public Worker workerRandomizer(Skill skill) {
+    public Worker workerRandomizer() {
         Worker worker = new Worker();
         int maxSkillAmount = 3;
         int minSkillAmount = 1;
         int randomSkillAmount = minSkillAmount + (int)(Math.random() * (maxSkillAmount - minSkillAmount));
-        for (int i = 1; i <= randomSkillAmount; i++) {
+        HashSet<Skill> skillHashSet = new HashSet<>();
+        for (int i = 0; i <= randomSkillAmount; i++) {
             int randomSkillOrdinal = (int)(Math.random() * Skill.values().length);
-            worker.skillSet.add(Skill.values()[randomSkillOrdinal]);
+            skillHashSet.add(Skill.values()[randomSkillOrdinal]);
         }
+        worker.skillSet = skillHashSet;
         int maxSalary = 2000;
         int minSalary = 700;
         int randomSalary = minSalary + (int)(Math.random() *(maxSalary - minSalary));
