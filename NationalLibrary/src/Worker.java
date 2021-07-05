@@ -53,7 +53,7 @@ public class Worker {
 
     @Override
     public String toString() {
-        return "Worker {" +
+        return "\nWorker {" +
                 "skillSet = " + skillSet +
                 ", salary = " + salary +
                 '}';

@@ -24,19 +24,20 @@ public class Crew extends Worker {
     public Crew crewRandomizer() {
         Crew crew = new Crew();
         HashSet<Worker> crewHashSet = new HashSet<>();
-        int maxCrewMembers = 20;
+        int maxCrewMembers = 15;
         int minCrewMembers = 10;
         int randomMembersAmount = minCrewMembers + (int)(Math.random() * (maxCrewMembers - minCrewMembers));
-        for (int i = 0; i <= randomMembersAmount; i++) {
+        for (int i = 1; i <= randomMembersAmount; i++) {
             crewHashSet.add(new Worker().workerRandomizer());
         }
         crew.crewSet = crewHashSet;
-        crew.financialProposal = proposalCalculator(crew);
+        crew.financialProposal = crew.proposalCalculator(crew);
+
         return crew;
     }
 
     public double proposalCalculator(Crew crew) {
-        double sumCrewSalary = 0;
+        double sumCrewSalary = 0.0;
         Iterator<Worker> crewIterator = crewSet.iterator();
         while (crewIterator.hasNext()) {
             sumCrewSalary += crewIterator.next().getSalary();
@@ -47,5 +48,11 @@ public class Crew extends Worker {
         return financialProposal;
     }
 
-
+    @Override
+    public String toString() {
+        return "Crew {" +
+                "crewSet = " + crewSet +
+                "\nfinancialProposal = " + financialProposal +
+                "}";
+    }
 }
