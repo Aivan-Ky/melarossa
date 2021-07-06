@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -5,7 +6,9 @@ public class Crew extends Worker {
     private HashSet<Worker> crewSet;
     private double financialProposal;
 
-    public Crew() {
+    public Crew(HashSet<Worker> workers) {
+        this.crewSet = workers;
+        this.financialProposal = proposalCalculator();
     }
 
     public HashSet<Worker> getCrewSet() {
@@ -21,22 +24,7 @@ public class Crew extends Worker {
         this.financialProposal = financialProposal;
     }
 
-    public Crew crewRandomizer() {
-        Crew crew = new Crew();
-        HashSet<Worker> crewHashSet = new HashSet<>();
-        int maxCrewMembers = 15;
-        int minCrewMembers = 10;
-        int randomMembersAmount = minCrewMembers + (int)(Math.random() * (maxCrewMembers - minCrewMembers));
-        for (int i = 1; i <= randomMembersAmount; i++) {
-            crewHashSet.add(new Worker().workerRandomizer());
-        }
-        crew.crewSet = crewHashSet;
-        crew.financialProposal = crew.proposalCalculator(crew);
-
-        return crew;
-    }
-
-    public double proposalCalculator(Crew crew) {
+    public double proposalCalculator() {
         double sumCrewSalary = 0.0;
         Iterator<Worker> crewIterator = crewSet.iterator();
         while (crewIterator.hasNext()) {
@@ -44,8 +32,7 @@ public class Crew extends Worker {
         }
         double taxRate = 0.4;
         double interest = Math.random() * 0.3;
-        financialProposal = sumCrewSalary + (sumCrewSalary * interest) + (sumCrewSalary * taxRate);
-        return financialProposal;
+        return sumCrewSalary + (sumCrewSalary * interest) + (sumCrewSalary * taxRate);
     }
 
     @Override
