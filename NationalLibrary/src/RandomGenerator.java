@@ -21,8 +21,8 @@ public class RandomGenerator {
 
     public static Crew crewRandomizer() {
         HashSet<Worker> crewHashSet = new HashSet<>();
-        int maxCrewMembers = 21;
-        int minCrewMembers = 14;
+        int maxCrewMembers = 7;
+        int minCrewMembers = 3;
         int randomMembersAmount = minCrewMembers + (int)(Math.random() * (maxCrewMembers - minCrewMembers));
         for (int i = 1; i <= randomMembersAmount; i++) {
             crewHashSet.add(workerRandomizer());
@@ -32,7 +32,7 @@ public class RandomGenerator {
 
     public static HashSet<Crew> crewListGenerator(int amount) {
         HashSet<Crew> hashSet = new HashSet<>();
-        for (int i = 0; i <= amount; i++) {
+        for (int i = 1; i <= amount; i++) {
             Crew crew = RandomGenerator.crewRandomizer();
             hashSet.add(crew);
         }

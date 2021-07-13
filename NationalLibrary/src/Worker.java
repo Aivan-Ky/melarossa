@@ -39,8 +39,8 @@ public class Worker {
     @Override
     public String toString() {
         return "\nWorker {" +
-                "skillSet = " + skillSet +
-                ", salary = " + salary +
+                "skillSet: " + skillSet +
+                ", salary: " + salary +
                 '}';
     }
 }

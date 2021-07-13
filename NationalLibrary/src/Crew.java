@@ -1,8 +1,9 @@
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class Crew extends Worker {
+public class Crew extends Worker  { //implements Comparator<Crew> !!!!!!!!!
     private HashSet<Worker> crewSet;
     private double financialProposal;
 
@@ -37,9 +38,15 @@ public class Crew extends Worker {
 
     @Override
     public String toString() {
-        return "Crew {" +
+        return "\n\tCrew {" +
                 "crewSet = " + crewSet +
                 "\nfinancialProposal = " + financialProposal +
                 "}";
     }
+
+    /*@Override
+    public int compare(Crew crew1, Crew crew2) {
+        return (int)(crew1.getFinancialProposal() - crew2.getFinancialProposal());
+    }*/
+
 }
