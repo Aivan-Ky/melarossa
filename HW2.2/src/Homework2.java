@@ -7,7 +7,7 @@ public class Homework2 {
         int n = Integer.parseInt(args[2]);
 
         int factorialOfn = 1;
-        int[] fibonacciSequence = new int[n];
+        int[] fibonacciSequence = new int[n];  // !!!!!!!!! записывать результат в число long!!!!!!!
 
         int a = 0, b = 1; // переменные для вычисления ряда Фибоначчи
         int i = 0;

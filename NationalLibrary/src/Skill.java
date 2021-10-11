@@ -1,0 +1,17 @@
+public enum Skill {
+    DIG,
+    NOT_TO_DIG,
+    PAINT,
+    ROOFING,
+    ELECTRICIAN,
+    BUILDER,
+    CONCRETE_LAYER,
+    WELDER,
+    WINDOW_MAKER,
+    PLUMBER,
+    STREET_DANCER,
+    MANAGER,
+    DIRTY_TALKER,
+    VODKA_DRINKER,
+    BALALAIKA_PLAYER;
+}
